@@ -16,7 +16,7 @@ class JungDeaMan:
 
         # 팔각도는 0 ~ 90도
         self.shoulderAngel = 45
-        self.power = 0
+        self.power = 10
 
         self.appearance = 'circle'
         self.outline = "#FFFFFF"
@@ -30,25 +30,25 @@ class JungDeaMan:
         # 상, 하 -> 팔 각도 변경
         if command['up_pressed']:
             if (self.shoulderAngel != 90) : self.shoulderAngel += 5
-            print("정대만의 팔 각도 상승!!")
+            print("정대만의 팔 각도 상승!!", end = " ")
             print("현재 팔각도 : ", self.shoulderAngel)
     
         
         if command['down_pressed']:
             if (self.shoulderAngel != 0) : self.shoulderAngel -= 5
-            print("정대만의 팔 각도 하강!!")
+            print("정대만의 팔 각도 하강!!", end = " ")
             print("현재 팔각도 : ", self.shoulderAngel)
 
         if command['left_pressed']:
-            if (self.power != 0) : 
+            if (self.power != 5) : 
                 self.power -= 1
                 self.position[0] -= 5
                 self.position[2] -= 5
-            print("정대만의 파워 감소")
+            print("정대만의 파워 감소 ", self.power)
         
         if command['right_pressed']:
-            if (self.power != 10) : 
+            if (self.power != 15) : 
                 self.power += 1
                 self.position[0] += 5
                 self.position[2] += 5
-            print("정대만의 파워 증가")
+            print("정대만의 파워 증가 ", self.power)
