@@ -6,10 +6,9 @@ from digitalio import DigitalInOut, Direction
 from PIL import Image, ImageDraw, ImageFont
 from adafruit_rgb_display import st7789
 import numpy as np
-import Joystick
 
 class JungDeaMan:
-    def __init__(self, width, height) :
+    def __init__(self) :
         # 정대만이 가져야하는 변수들
         # 팔각도, 외형, 시작점
 
@@ -21,10 +20,15 @@ class JungDeaMan:
 
 
     def move(self, command = None) :
+        
         # 상, 하 -> 팔 각도 변경
         if command['up_pressed']:
             if (self.shoulderAngel != 90) : self.shoulderAngel += 5
+            print("정대만의 팔 각도 상승!!")
+            print("현재 팔각도 : " + self.shoulderAngel)
     
         
         if command['down_pressed']:
             if (self.shoulderAngel != 0) : self.shoulderAngel -= 5
+            print("정대만의 팔 각도 하강!!")
+            print("현재 팔각도 : " + self.shoulderAngel)
